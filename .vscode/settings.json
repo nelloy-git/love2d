@@ -1,0 +1,6 @@
+{
+    "Lua.workspace.ignoreSubmodules": false,
+    "Lua.diagnostics.globals": [
+        "love"
+    ]
+}
