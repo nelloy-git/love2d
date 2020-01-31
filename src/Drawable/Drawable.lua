@@ -9,13 +9,12 @@ local Class = require('utils.Class.Class')
 --=======
 
 local Drawable = Class.new('Drawable')
----@class DrawableClass : Class
-local static = Drawable.static
 ---@class Drawable : Instance
 local public = Drawable.public
+---@class DrawableClass : Class
+local static = Drawable.static
 ---@type DrawableClass
 local override = Drawable.override
-
 local private = {}
 
 --========
@@ -36,8 +35,8 @@ end
 function static.drawAll()
     local all = private.all
 
-    for i = 1, #all do
-        all[i]:draw()
+    for k,v in ipairs(all) do
+        all[k]:draw()
     end
 end
 
@@ -45,9 +44,8 @@ end
 -- Public
 --========
 
-function public:draw()
-    print('test draw')
-end
+
+function public:draw() end
 
 --=========
 -- Private

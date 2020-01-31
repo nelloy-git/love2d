@@ -19,12 +19,15 @@ local function isInList(elem, list)
     return false
 end
 
+local ClassStatic
 ---@param class Class
 function ClassParent.register(class, ...)
+    ClassStatic = ClassStatic or require('utils.Class.Static')
     local vararg = {...}
 
     local parents_list = {}
     for i = 1, #vararg do
+        vararg[i] = ClassStatic.getClass(vararg[i]) or vararg[i]
         if not ClassName.isClass(vararg[i]) then
             error(fmt('%d-th parent is not class', i), 3)
         end

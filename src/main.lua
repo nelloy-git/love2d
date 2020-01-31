@@ -1,6 +1,9 @@
-local Drawable = require('utils.Drawable')
+local Texture = require('Drawable.Texture')
+local Sprite = require('Drawable.Sprite')
+local Drawable = require('Drawable.Drawable')
 
-local test = Drawable.new()
+local texture = Texture.new('/graphics/hamster.jpg', true, false)
+local test = Sprite.new(texture)
 
 function love.load()
 end
